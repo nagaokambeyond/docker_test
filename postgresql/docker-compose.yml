@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      PGPASSWORD: password123
+      POSTGRES_DB: sample
+      TZ: "Asia/Tokyo"
+    ports:
+      - 5432:5432
+    volumes:
+      # 物理フォルダの場合
+      - ./data:/var/lib/postgresql/data
+      # 名前付きボリュームの場合
+      #- postgres:/var/lib/postgresql/data
+
+# 名前付きボリュームにはこれが必要
+#volumes:
+#  postgres:

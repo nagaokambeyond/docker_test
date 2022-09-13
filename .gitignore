@@ -1,2 +1,6 @@
+# 除外拡張子
 .env
 .DS_Store
+
+# 除外フォルダ
+/postgresql/data/
