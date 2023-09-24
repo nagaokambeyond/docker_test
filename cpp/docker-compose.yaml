@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  cpp_dev:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    image: cpp_dev
+    container_name: cpp_dev
+    volumes:
+      - type: bind
+        source: .
+        target: /cpp_dev
+    stdin_open: true
+    tty: true
+    working_dir: /cpp_dev/src/build
+
